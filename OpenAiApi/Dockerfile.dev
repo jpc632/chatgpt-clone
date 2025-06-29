@@ -1,0 +1,20 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0
+
+WORKDIR /src
+
+# Copy csproj and restore dependencies
+COPY ["CodeReviewApi.csproj", "./"]
+RUN dotnet restore "CodeReviewApi.csproj"
+
+# Copy everything else
+COPY . .
+
+# Expose port 5221
+EXPOSE 5221
+
+# Set environment variables
+ENV ASPNETCORE_URLS=http://+:5221
+ENV ASPNETCORE_ENVIRONMENT=Development
+
+# Start the app with watch
+CMD ["dotnet", "watch", "run", "--urls", "http://0.0.0.0:5221"] 

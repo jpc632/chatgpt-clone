@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Frontend service
+  frontend:
+    build:
+      context: ./ChatGptUi
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    environment:
+      - NODE_ENV=production
+    networks:
+      - chatgpt-network
+
+  # API service
+  api:
+    build:
+      context: ./OpenAiApi
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - OpenAI__ApiKey=${OPENAI_API_KEY}
+    networks:
+      - chatgpt-network
+
+networks:
+  chatgpt-network:
+    driver: bridge
+
+volumes:
+  # Add any persistent volumes here if needed 

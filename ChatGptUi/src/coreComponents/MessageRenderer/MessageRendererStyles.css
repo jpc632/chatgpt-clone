@@ -1,0 +1,54 @@
+.message-renderer {
+  line-height: 1.6;
+}
+
+.message-paragraph {
+  margin: 8px 0;
+}
+
+.message-heading {
+  margin: 16px 0 8px 0;
+  font-weight: 600;
+  color: inherit;
+}
+
+.message-heading:first-child {
+  margin-top: 0;
+}
+
+.message-list {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.message-list-item {
+  margin: 4px 0;
+}
+
+.message-blockquote {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border-left: 4px solid #4299e1;
+  background-color: rgba(66, 153, 225, 0.1);
+  border-radius: 4px;
+  font-style: italic;
+}
+
+.inline-code {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.9em;
+  border: 1px solid #4a5568;
+}
+
+/* Ensure proper spacing between elements */
+.message-renderer > *:first-child {
+  margin-top: 0;
+}
+
+.message-renderer > *:last-child {
+  margin-bottom: 0;
+} 

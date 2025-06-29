@@ -1,0 +1,35 @@
+.SendButton {
+  display: flex;
+  background-color: white;
+  border-color: transparent;
+  border-radius: 50px;
+  align-items: center;
+  padding: 9px;
+  color: #1a1a1a;
+}
+.SendButton:hover {
+  border-color: transparent;
+  background-color: rgb(164, 164, 164);
+}
+
+.ChatInterface
+{
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #333333;
+  padding: 1rem;
+  gap: 1rem;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
